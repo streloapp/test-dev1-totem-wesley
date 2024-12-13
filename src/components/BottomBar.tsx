@@ -156,7 +156,7 @@ export default function BottomBar() {
                 src={option.flagUrl}
                 width={24}
                 height={24}
-                alt="Ícone de casa"
+                alt={`Ícone da bandeira para ${option.name}`}
               />
               {option.name}
             </MenuItem>
