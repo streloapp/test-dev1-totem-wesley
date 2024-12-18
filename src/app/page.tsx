@@ -1,5 +1,6 @@
 'use client';
 
+<<<<<<< HEAD
 import useNavigation from '@/hook/useNavigation';
 import { Box, CircularProgress, Container, Typography } from '@mui/material';
 import Image from 'next/image';
@@ -8,6 +9,16 @@ import { useEffect } from 'react';
 
 export default function Home() {
   const { menuItems, fetchMenuItems } = useNavigation();
+=======
+import useNavigation from '@/hooks/useNavigation';
+import { Box, CircularProgress, Container, Typography } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+export default function Home() {
+  const { fetchMenuItems, menuItems } = useNavigation();
+>>>>>>> aa952c3 (fix: improve NavigationHeader logic)
 
   useEffect(() => {
     fetchMenuItems();

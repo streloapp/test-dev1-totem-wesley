@@ -1,10 +1,15 @@
 'use client';
 
 import NavigationHeader from '@/components/NavigationHeader';
+<<<<<<< HEAD
 import useNavigation from '@/hook/useNavigation';
 import { Box, Container } from '@mui/material';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+=======
+import useNavigation from '@/hooks/useNavigation';
+import { Box } from '@mui/material';
+>>>>>>> aa952c3 (fix: improve NavigationHeader logic)
 import { useEffect } from 'react';
 
 export default function PagesLayout({
@@ -12,6 +17,7 @@ export default function PagesLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+<<<<<<< HEAD
   const { currentEstablishment, fetchMenuItems, fetchEstablishments } =
     useNavigation();
   const pathname = usePathname();
@@ -19,6 +25,12 @@ export default function PagesLayout({
   useEffect(() => {
     fetchMenuItems();
     fetchEstablishments();
+=======
+  const { fetchMenuItems } = useNavigation();
+
+  useEffect(() => {
+    fetchMenuItems();
+>>>>>>> aa952c3 (fix: improve NavigationHeader logic)
   }, []);
 
   return (
