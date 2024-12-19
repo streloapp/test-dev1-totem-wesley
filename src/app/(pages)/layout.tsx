@@ -1,5 +1,6 @@
 'use client';
 
+import InactivityModal from '@/components/InactivityModal';
 import NavigationHeader from '@/components/NavigationHeader';
 import useNavigation from '@/hook/useNavigation';
 import { Box, Container } from '@mui/material';
@@ -66,6 +67,7 @@ export default function PagesLayout({
       >
         {children}
       </Container>
+      <InactivityModal />
     </Box>
   );
 }
