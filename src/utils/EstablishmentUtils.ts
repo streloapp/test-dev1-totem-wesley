@@ -9,6 +9,23 @@ interface DaysOfWeekPT {
   [key: string]: string;
 }
 
+/**
+ * Formats the opening hours for the current day in Portuguese.
+ *
+ * @param openingHours - Object containing business hours for each day of the week
+ * @returns A formatted string containing today's day name and opening hours in Portuguese.
+ * Returns 'Sem informação de horário.' if no hours are available for today,
+ * '[Day]: Fechado' if the business is closed today,
+ * or '[Day]: HH:MM às HH:MM' (or multiple intervals separated by commas) if open
+ *
+ * @example
+ * // If today is Wednesday and the business is open from 9:00 to 18:00
+ * formatOpeningHours(hours) // Returns "Quarta: 09:00 às 18:00"
+ *
+ * @example
+ * // If today is Sunday and the business is closed
+ * formatOpeningHours(hours) // Returns "Domingo: Fechado"
+ */
 export function formatOpeningHours(openingHours: OpeningHours) {
   const daysOfWeek = [
     'sunday',
@@ -48,6 +65,19 @@ export function formatOpeningHours(openingHours: OpeningHours) {
   return `${todayLabel}: ${formattedIntervals}`;
 }
 
+/**
+ * Creates a URL-friendly alias from a given string.
+ *
+ * @param name - The string to convert into an alias
+ * @returns A lowercase string with accents removed, special characters stripped,
+ *          spaces replaced with hyphens, and multiple hyphens consolidated
+ *
+ * @example
+ * ```ts
+ * createAlias("Hello World!") // returns "hello-world"
+ * createAlias("Café études") // returns "cafe-etudes"
+ * ```
+ */
 export function createAlias(name: string): string {
   return name
     .toLowerCase()
